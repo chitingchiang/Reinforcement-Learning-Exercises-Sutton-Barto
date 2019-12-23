@@ -254,22 +254,7 @@ int value_iteration(Environment env, int** policy, double** value, double theta=
         cout << "at " << n_value_iteration << " iteration, max_diff = " << max_diff << endl;
     } while (max_diff>theta);
 
-    for (int s_A=0; s_A<=env.max_car; ++s_A){
-        for (int s_B=0; s_B<=env.max_car; ++s_B){
-            int move_min = max(-env.max_move, max(-s_B, s_A-env.max_car));
-            int move_max = min(env.max_move, min(s_A, env.max_car-s_B));
-            double q_best = -1e8;
-            int action_best = 0;
-            for (int action=move_min; action<=move_max; ++action){
-                double q = evaluate_q_at_one_state(env, s_A, s_B, action, value);
-                if (q>=q_best){
-                    q_best = q;
-                    action_best = action;
-                }
-            }
-            policy[s_A][s_B] = action_best;
-        }
-    }
+    greedify_policy_given_value(env, policy, value);
 
     return n_value_iteration;
 }
