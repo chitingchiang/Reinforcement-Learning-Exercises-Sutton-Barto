@@ -254,7 +254,7 @@ int value_iteration(Environment env, int** policy, double** value, double theta=
         cout << "at " << n_value_iteration << " iteration, max_diff = " << max_diff << endl;
     } while (max_diff>theta);
 
-    greedify_policy_given_value(env, policy, value);
+    bool policy_stable = greedify_policy_given_value(env, policy, value);
 
     return n_value_iteration;
 }
