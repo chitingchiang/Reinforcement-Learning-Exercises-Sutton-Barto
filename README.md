@@ -7,3 +7,5 @@
 [Exercise 4.9: Gambler's Problem](exercise4.9/gambler_problem.py)
 
 [Example 5.1: Blackjack](example5.1/blackjack.ipynb)
+
+[Example 6.2: Random Walk](example6.2/random_walk.ipynb)
