@@ -9,3 +9,5 @@
 [Example 5.1: Blackjack](example5.1/blackjack.ipynb)
 
 [Example 6.2: Random Walk](example6.2/random_walk.ipynb)
+
+[Example 9.1: State Aggregation on the 1000-state Random Walk](example9.1/state_aggregation_random_walk.ipynb)
